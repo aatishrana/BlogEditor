@@ -1,3 +1,23 @@
-<p>
-  preview works!
-</p>
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+
+  <div *ngFor="let item of data;let i = index">
+
+    <div *ngIf="item.type == 'text'" class="no-margin-no-padding">
+      <h1 *ngIf="item.style.tag == 'h1'" class="no-margin-no-padding">{{item.data}}</h1>
+      <h2 *ngIf="item.style.tag == 'h2'" class="no-margin-no-padding">{{item.data}}</h2>
+      <h3 *ngIf="item.style.tag == 'h3'" class="no-margin-no-padding">{{item.data}}</h3>
+      <h4 *ngIf="item.style.tag == 'h4'" class="no-margin-no-padding">{{item.data}}</h4>
+      <h5 *ngIf="item.style.tag == 'h5'" class="no-margin-no-padding">{{item.data}}</h5>
+      <h6 *ngIf="item.style.tag == 'h6'" class="no-margin-no-padding">{{item.data}}</h6>
+      <p *ngIf="item.style.tag == 'p'" class="no-margin-no-padding"
+         [ngStyle]="{'text-align':item.style['text-align']}">{{item.data}}</p>
+    </div>
+
+    <div *ngIf="item.type=='space'" [ngStyle]="{'height':item.style.height+unit}" class="no-margin-no-padding"></div>
+
+    <div *ngIf="item.type == 'image'" class="no-margin-no-padding" style="text-align: center;">
+      <img [src]="item.style.src" [ngStyle]="{'height': item.style.height+unit}">
+    </div>
+
+  </div>
+</div>
