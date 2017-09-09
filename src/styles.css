@@ -6,3 +6,8 @@
 .padding-10 {
   padding: 10px;
 }
+
+.no-margin-no-padding {
+  margin: 0 !important;
+  padding: 0 !important;
+}

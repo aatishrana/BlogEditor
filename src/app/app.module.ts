@@ -7,12 +7,15 @@ import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {EditorComponent} from './editor/editor.component';
 import {PreviewComponent} from './preview/preview.component';
+import {KeysPipe} from "./common/key.pipe";
+import {CommonService} from "./common/common.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
-    PreviewComponent
+    PreviewComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import {PreviewComponent} from './preview/preview.component';
       }
     ])
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
