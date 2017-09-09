@@ -9,13 +9,15 @@ import {EditorComponent} from './editor/editor.component';
 import {PreviewComponent} from './preview/preview.component';
 import {KeysPipe} from "./common/key.pipe";
 import {CommonService} from "./common/common.service";
+import { StyleSetterComponent } from './editor/style-setter/style-setter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EditorComponent,
     PreviewComponent,
-    KeysPipe
+    KeysPipe,
+    StyleSetterComponent
   ],
   imports: [
     BrowserModule,

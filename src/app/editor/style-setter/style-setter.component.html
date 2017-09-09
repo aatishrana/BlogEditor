@@ -1,0 +1,9 @@
+<select [(ngModel)]="selectedKey" class="form-control full-width">
+  <option *ngFor="let style of item.style | keys" [value]="style.toString()">
+    {{style}}
+  </option>
+</select>
+<input type="text"
+       class="form-control full-width"
+       [ngModel]="getStyleAttr(item)"
+       (ngModelChange)="setStyleAttr($event, i)">

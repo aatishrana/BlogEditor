@@ -13,17 +13,11 @@
                         [(ngModel)]="item.data"></textarea>
           </div>
         </div>
-        <div class="col-xs-2 no-margin-no-padding" *ngIf="selectedItemIndex==i">
-          <select [(ngModel)]="selectedKey" class="form-control full-width">
-            <option *ngFor="let style of item.style | keys" [value]="style">
-              {{style}}
-            </option>
-          </select>
-          <input type="text"
-                 class="form-control full-width"
-                 [ngModel]="getStyleAttr(item)"
-                 (ngModelChange)="setStyleAttr($event, i)">
-        </div>
+        <app-style-setter class="col-xs-2 no-margin-no-padding"
+                          *ngIf="selectedItemIndex==i"
+                          [item]="item" [selectedKey]="selectedKey" [i]="i"
+                          [selectedItemIndex]="selectedItemIndex">
+        </app-style-setter>
       </div>
 
       <div *ngIf="item.type=='space'">
@@ -32,18 +26,11 @@
             <p>Empty Space</p>
           </div>
         </div>
-        <!-- May be DRY violated -->
-        <div class="col-xs-2 no-margin-no-padding" *ngIf="selectedItemIndex==i">
-          <select [(ngModel)]="selectedKey" class="form-control full-width">
-            <option *ngFor="let style of item.style | keys" [value]="style">
-              {{style}}
-            </option>
-          </select>
-          <input type="text"
-                 class="form-control full-width"
-                 [ngModel]="getStyleAttr(item)"
-                 (ngModelChange)="setStyleAttr($event, i)">
-        </div>
+        <app-style-setter class="col-xs-2 no-margin-no-padding"
+                          *ngIf="selectedItemIndex==i"
+                          [item]="item" [selectedKey]="selectedKey" [i]="i"
+                          [selectedItemIndex]="selectedItemIndex">
+        </app-style-setter>
       </div>
 
       <div *ngIf="item.type=='image'" style="text-align: center;">
@@ -54,18 +41,13 @@
                  [ngStyle]="{'height': item.style.height+unit}">
           </div>
         </div>
-        <div class="col-xs-2 no-margin-no-padding" *ngIf="selectedItemIndex==i">
-          <select [(ngModel)]="selectedKey" class="form-control full-width">
-            <option *ngFor="let style of item.style | keys" [value]="style.toString()">
-              {{style}}
-            </option>
-          </select>
-          <input type="text"
-                 class="form-control full-width"
-                 [ngModel]="getStyleAttr(item)"
-                 (ngModelChange)="setStyleAttr($event, i)">
-        </div>
+        <app-style-setter class="col-xs-2 no-margin-no-padding"
+                          *ngIf="selectedItemIndex==i"
+                          [item]="item" [selectedKey]="selectedKey" [i]="i"
+                          [selectedItemIndex]="selectedItemIndex">
+        </app-style-setter>
       </div>
+
     </div>
   </div>
   <div class="row padding-10">
