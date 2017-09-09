@@ -1,3 +1,11 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container padding-10">
+  <div class="row">
+    <div class="col-xs-6">
+      <button class="btn btn-primary full-width" routerLink="edit">Edit</button>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-success full-width" routerLink="preview">Preview</button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
