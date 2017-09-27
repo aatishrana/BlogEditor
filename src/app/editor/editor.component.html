@@ -4,6 +4,12 @@
 
     <div class="row padding-10" [ngClass]="{'selected-item':selectedItemIndex==i}">
 
+      <button *ngIf="selectedItemIndex==i"
+              style="float: right; margin: 2px;"
+              class="btn-danger"
+              (click)="onItemRemove(i)">Remove
+      </button>
+
       <div *ngIf="item.type=='text'">
         <div class="col-xs-10 no-margin-no-padding">
           <div class="form-group">

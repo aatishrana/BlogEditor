@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {CommonService} from '../common/common.service';
+import {DataItem} from '../common/data.item.model';
 
 @Component({
   selector: 'app-preview',
@@ -10,7 +11,7 @@ import {CommonService} from '../common/common.service';
 export class PreviewComponent implements OnInit, OnDestroy {
 
   public unit;
-  public data: any[];
+  public data: DataItem[];
   private subscriber: Subscription;
 
   constructor(private service: CommonService) {

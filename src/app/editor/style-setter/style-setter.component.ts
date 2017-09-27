@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CommonService} from '../../common/common.service';
+import {DataItem} from '../../common/data.item.model';
 
 @Component({
   selector: 'app-style-setter',
@@ -10,7 +11,7 @@ export class StyleSetterComponent implements OnInit {
 
   @Input() selectedItemIndex: number;
   @Input() i: number;
-  @Input() item: any;
+  @Input() item: DataItem;
   @Input() selectedKey: string;
 
   constructor(private service: CommonService) {

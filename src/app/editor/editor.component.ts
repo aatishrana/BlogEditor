@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {CommonService} from '../common/common.service';
+import {DataItem} from '../common/data.item.model';
 
 @Component({
   selector: 'app-editor',
@@ -10,7 +11,7 @@ import {CommonService} from '../common/common.service';
 export class EditorComponent implements OnInit, OnDestroy {
 
   public unit;
-  public data: any[];
+  public data: DataItem[];
   public selectedKey = '';
   public selectedItemIndex = -1;
   private subscriber: Subscription;
@@ -51,6 +52,10 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   onAddSpaceClick() {
     this.service.addSpace();
+  }
+
+  onItemRemove(index) {
+    this.service.remove(index);
   }
 
   getStyleAttr(item) {

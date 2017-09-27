@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
+import {DataItem} from './data.item.model';
 
 @Injectable()
 export class CommonService {
 
   public unit = 'px';
-  public data: any[];
-  public dataChanged = new Subject<any[]>();
+  public data: DataItem[];
+  public dataChanged = new Subject<DataItem[]>();
 
   constructor() {
     this.data = [];
