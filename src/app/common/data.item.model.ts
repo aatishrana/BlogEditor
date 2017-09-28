@@ -3,4 +3,6 @@ export class DataItem {
   seq_num: number;
   data: string;
   style: any;
+  link: string;
+  isLink: boolean;
 }

@@ -42,12 +42,20 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   // simply delegating operations to service
+  onAddLinkTextClick() {
+    this.service.addText(true);
+  }
+
   onAddTextClick() {
-    this.service.addText();
+    this.service.addText(false);
+  }
+
+  onAddLinkImageClick() {
+    this.service.addImage(true);
   }
 
   onAddImageClick() {
-    this.service.addImage();
+    this.service.addImage(false);
   }
 
   onAddSpaceClick() {

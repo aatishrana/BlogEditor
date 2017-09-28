@@ -13,32 +13,38 @@ export class CommonService {
     this.data = [];
   }
 
-  addText() {
+  addText(link: boolean) {
     this.data.push({
-      'type': 'text',
-      'seq_num': this.data.length,
-      'data': 'Sample text ' + (this.data.length + 1),
-      'style': this.getDefaultTextStyle()
+      type: 'text',
+      seq_num: this.data.length,
+      data: 'Sample text ' + (this.data.length + 1),
+      style: this.getDefaultTextStyle(),
+      isLink: link,
+      link: ''
     });
     this.emit();
   }
 
-  addImage() {
+  addImage(link: boolean) {
     this.data.push({
-      'type': 'image',
-      'seq_num': this.data.length,
-      'data': '',
-      'style': this.getDefaultImageStyle()
+      type: 'image',
+      seq_num: this.data.length,
+      data: '',
+      style: this.getDefaultImageStyle(),
+      isLink: link,
+      link: ''
     });
     this.emit();
   }
 
   addSpace() {
     this.data.push({
-      'type': 'space',
-      'seq_num': this.data.length,
-      'data': '',
-      'style': this.getDefaultSpaceStyle()
+      type: 'space',
+      seq_num: this.data.length,
+      data: '',
+      style: this.getDefaultSpaceStyle(),
+      isLink: false,
+      link: ''
     });
     this.emit();
   }
